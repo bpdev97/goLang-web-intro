@@ -1,7 +1,7 @@
 package db
 
 import (
-    "database/sql"
+    _ "database/sql"
 
 	"github.com/bpdev97/goLang-web-intro/model"
     "github.com/jmoiron/sqlx"
@@ -46,7 +46,7 @@ func (p *pgDb) prepareSqlStatements() (err error) {
     return nil
 }
 
-func SelectPeople() ([]*Person, error) {
+func SelectPeople() ([]*model.Person, error) {
 	people := make([]*model.Person, 0)
     if err := p.sqlSelectPeople.Select(&people); err != nil {
         return nil, err
