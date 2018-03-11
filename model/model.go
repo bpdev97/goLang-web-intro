@@ -1,7 +1,7 @@
 package model
 
 type db interface {
-    SelectPeople() ([]*Person, error)
+    SelectPeople(p *pgDb) ([]*Person, error)
 }
 
 type Model struct {
